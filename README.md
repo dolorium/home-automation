@@ -5,7 +5,7 @@ TO DO: Add home assistant scripts for the relevant parts.
 
 This is a system for home automation which use control systems to regulate a set of parameters. It integrates with pomodoro method by setting the light colour for environmental cues. The system consists of two parts - the control subsystem and the pomodoro subsystem.
 
-# Control system
+## Control system
 This system measures and adjusts 4 parameters: CO2 concentration, temperature, humidity and particulate matter pm2.5. There is a sensor that measures each of these parameters.
 
 Here are the mechanisms that adjust these parameters:
@@ -32,3 +32,10 @@ If it is more than 55, set the air purifier to speed 4. Also switch the smart bu
 5) If all parameters are within the norm and the smart bulb is still red, switch it to warm white.
 6) Collect the measurements and save it for later analysis.
 7) If the iteration is completed and 5 minutes have passed since the beginning of the cycle, start the next iteration - go to step 1. 
+
+## Pomodoro environment
+The pomodoro technique is a time management method where a timer is set for 25 minutes where one works on something productive. Then a 5 minute break is held before repeating the cycle.
+
+This system assists in performing pomodoro technique by providing environmental cues with colour changes. In the active phase of the pomodoro the smart bulb is switched to blueish white. This provides cues to initiate the habit of doing work, also blue light has been shown to decrease the production of melatonin, which should decrease sleepiness and improve focus.
+
+In this system once the user initiates the pomodoros, the light is switched to blueish white and after 25 minutes the user is queried whether they want to continue and whether to take a break. If the light is turned red due to the abnormalities in the regulated parameters, the pomodoro is cancelled and the light is switched to red, announcing the problem to the user. The completed pomodoros are saved.
